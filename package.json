@@ -9,7 +9,7 @@
   "dependencies": {
   },
   "scripts": {
-    "css": "npx tailwindcss -i ./css/src/input.css -o ./css/style.css --watch",
+    "css": "npx tailwindcss -i ./assets/css/src/input.css -o ./assets/css/style.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
