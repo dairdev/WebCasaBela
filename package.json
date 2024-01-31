@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "name": "webcasabela",
+  "description": "Web Casabela",
+  "version": "1.0.0",
+  "main": "script.js",
+  "dependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dairdev/WebCasaBela.git"
+  },
+  "author": "Dennis Infantas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dairdev/WebCasaBela/issues"
+  },
+  "homepage": "https://github.com/dairdev/WebCasaBela#readme"
+}
