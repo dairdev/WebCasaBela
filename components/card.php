@@ -44,19 +44,8 @@
   </div>
   <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
     <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-      <svg height="13px" width="13px" version="1.1" id="Layer_1"
-        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-        y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
-        xml:space="preserve">
-        <g>
-          <g>
-            <path
-              d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
-            </path>
-          </g>
-        </g>
-      </svg>
-      <span class="ml-1">6 mins ago</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-coin" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M14.8 9a2 2 0 0 0 -1.8 -1h-2a2 2 0 1 0 0 4h2a2 2 0 1 1 0 4h-2a2 2 0 0 1 -1.8 -1" /><path d="M12 7v10" /></svg>
+      <span class="ml-1">220 000</span>
     </span>
 
     <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
