@@ -142,10 +142,10 @@ function build()
 
     clean($outPath);
 
-    $files = glob($inPath . '/*.html');
+    $files = glob($inPath . '/*.php');
 
     foreach ($files as $file) {
-        $outfile = str_replace($inPath, $outPath, $file);
+        $outfile = str_replace($inPath, $outPath, str_replace(".php",".html", $file));
         print "BUILDING $file to $outfile\n";
         $out = buildFile($file, false);
         file_put_contents($outfile, $out);
