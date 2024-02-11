@@ -9,7 +9,7 @@
               <li><a href="/" aria-label="Our product" title="Inicio"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Inicio</a>
               </li>
-              <li><a href="propiedad.php" aria-label="Our product" title="Proyectos"
+              <li><a href="propiedades.php" aria-label="Our product" title="Proyectos"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Proyectos</a>
               </li>
               <li><a href="contact.php" aria-label="Product pricing" title="Contacto"
