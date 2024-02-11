@@ -1,4 +1,4 @@
-<div class="rounded overflow-hidden shadow-lg flex flex-col">
+<div class="rounded overflow-hidden shadow-lg flex flex-col bg-white">
   <a href="#"></a>
   <div class="relative">
     <a href="#">
@@ -18,7 +18,7 @@
   </div>
   <div class="px-6 py-4 mb-auto">
     <a href="#"
-      class="font-medium text-lg inline-block hover:text-blue-600 transition duration-500 ease-in-out inline-block mb-2">Hermoso Triplex</a>
+      class="font-medium text-lg hover:text-blue-600 transition duration-500 ease-in-out inline-block mb-2">Hermoso Triplex</a>
       <?php
       $features = array(
       "location" => "Alguna direccion #123",
