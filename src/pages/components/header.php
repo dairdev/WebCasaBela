@@ -9,10 +9,10 @@
               <li><a href="/" aria-label="Our product" title="Inicio"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Inicio</a>
               </li>
-              <li><a href="/" aria-label="Our product" title="Proyectos"
+              <li><a href="propiedad.php" aria-label="Our product" title="Proyectos"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Proyectos</a>
               </li>
-              <li><a href="/" aria-label="Product pricing" title="Contacto"
+              <li><a href="contact.php" aria-label="Product pricing" title="Contacto"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Contacto</a>
               </li>
             </menu>
