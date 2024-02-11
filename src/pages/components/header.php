@@ -111,13 +111,13 @@ Sign up
               </h3>
               <form>
                 <div class="mb-1 sm:mb-2">
-                  <label for="email" class="inline-block mb-1 font-medium">Nombre</label>
+                  <label for="nombre" class="inline-block mb-1 font-medium">Nombre</label>
                   <input placeholder="Nombres y Apellidos" required="" type="text"
                     class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-red-400 focus:outline-none focus:shadow-outline"
                     id="nombre" name="nombre" />
                 </div>
                 <div class="mb-1 sm:mb-2">
-                  <label for="email" class="inline-block mb-1 font-medium">E-mail</label>
+                  <label for="email" class="inline-block mb-1 font-medium">Email</label>
                   <input placeholder="micorreo@correo.com" required="" type="text"
                     class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-red-400 focus:outline-none focus:shadow-outline"
                     id="email" name="email" />
