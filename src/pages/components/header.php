@@ -6,16 +6,13 @@
         <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
             <menu class="flex items-center hidden space-x-8 lg:flex">
-              <li><a href="/" aria-label="Our product" title="Our product"
+              <li><a href="/" aria-label="Our product" title="Inicio"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Inicio</a>
               </li>
-              <li><a href="/" aria-label="Our product" title="Our product"
+              <li><a href="/" aria-label="Our product" title="Proyectos"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Proyectos</a>
               </li>
-              <li><a href="/" aria-label="Our product" title="Our product"
-                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Tienes una propiedad</a>
-              </li>
-              <li><a href="/" aria-label="Product pricing" title="Product pricing"
+              <li><a href="/" aria-label="Product pricing" title="Contacto"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Contacto</a>
               </li>
             </menu>

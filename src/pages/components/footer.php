@@ -64,8 +64,9 @@
     </div>
     <div class="flex flex-col-reverse justify-between pt-5 pb-10 border-t lg:flex-row">
       <p class="text-sm text-gray-600">
-        © Copyright 2020 Lorem Inc. All rights reserved.
+        &copy; Copyright <?php echo date('Y') ?> Casa Bela &reg;. Todos los derechos reservados.
       </p>
+      <!--
       <ul class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row">
         <li>
           <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">F.A.Q</a>
@@ -77,6 +78,7 @@
           <a href="/" class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">Terms &amp; Conditions</a>
         </li>
       </ul>
+      -->
     </div>
   </div>
 </footer>
