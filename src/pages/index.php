@@ -104,10 +104,10 @@
         </div>
       </section>
       <section class="py-16">
-<?php include_once "components/contact.php" ?>
+        <?php include_once "components/contact.php" ?>
       </section>
     </main>
-<?php include_once "components/footer.php" ?>
+    <?php include_once "components/footer.php" ?>
   </body>
 
 </html>
