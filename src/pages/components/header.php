@@ -5,21 +5,24 @@
       <div class="bg-white bg-opacity-35">
         <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
           <div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
-            <ul class="flex items-center hidden space-x-8 lg:flex">
+            <menu class="flex items-center hidden space-x-8 lg:flex">
               <li><a href="/" aria-label="Our product" title="Our product"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Inicio</a>
               </li>
               <li><a href="/" aria-label="Our product" title="Our product"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Proyectos</a>
               </li>
+              <li><a href="/" aria-label="Our product" title="Our product"
+                class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Tienes una propiedad</a>
+              </li>
               <li><a href="/" aria-label="Product pricing" title="Product pricing"
                 class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Contacto</a>
               </li>
-            </ul>
+            </menu>
             <a href="/" aria-label="Company" title="Company" class="inline-flex items-center lg:mx-auto">
               <img src="assets/svg/logo.svg" class="w-16" title="Logo CasaBela" />
             </a>
-            <ul class="flex items-center hidden ml-auto space-x-8 lg:flex">
+            <menu class="flex items-center hidden ml-auto space-x-8 lg:flex">
               <li>
                 <a href="/"
                   class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-400 hover:bg-red-700 focus:shadow-outline focus:outline-none"
@@ -27,12 +30,12 @@
                   Reservar Cita
                 </a>
               </li>
-            </ul>
+            </menu>
             <!-- Mobile menu -->
             <div class="ml-auto lg:hidden">
               <button aria-label="Open Menu" title="Open Menu"
                 class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline">
-                <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
+                <svg class="w-5 text-gray-800" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z">
                   </path>
                   <path fill="currentColor" d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z">
