@@ -22,16 +22,16 @@
 
   <body>
     <?php include "components/header.php" ?>
-    <main>
+    <main class="bg-sky-50">
       <section class="proyectos max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           <?php 
           for($i = 0; $i < 3; $i++){
           include "components/card.php"; 
-        }
-        ?>
+          }
+          ?>
         </div>
-        </section>
+      </section>
       <section class="py-16 bg-blue-100 bg-blend-lighten">
         <div class="container relative flex flex-col-reverse mx-auto py-16 lg:py-0 lg:flex-col">
           <div class="w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:py-20 lg:max-w-screen-xl">
@@ -103,7 +103,7 @@
           </div>
         </div>
       </section>
-      <section class="py-16">
+      <section>
         <?php include_once "components/contact.php" ?>
       </section>
     </main>
