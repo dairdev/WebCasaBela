@@ -2,7 +2,7 @@
   <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
     <div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
       <menu class="flex items-center hidden space-x-8 lg:flex">
-        <li><a href="/src/pages/" aria-label="Our product" title="Inicio"
+        <li><a href="/src/pages/index.php" aria-label="Our product" title="Inicio"
           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Inicio</a>
         </li>
         <li><a href="/src/pages/propiedades.php" aria-label="Our product" title="Proyectos"
