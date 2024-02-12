@@ -2,7 +2,7 @@
   <div class="relative">
     <img src="assets/images/headerbackground1.jpg" class="absolute inset-0 object-cover w-full h-full" alt="" />
     <div class="relative bg-gray-900 bg-opacity-75">
-<?php include_once "components/navbar.php" ?>
+      <?php include_once 'components/navbar.php'  ?>
       <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16 lg:pb-48">
         <div class="flex flex-col items-center justify-between xl:flex-row">
           <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
