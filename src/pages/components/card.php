@@ -1,4 +1,4 @@
-<div class="rounded overflow-hidden shadow-lg flex flex-col bg-white">
+<div class="rounded overflow-hidden shadow-lg flex flex-col bg-white" data-aos="flip-down">
   <a href="#"></a>
   <div class="relative">
     <a href="#">
