@@ -1,3 +1,5 @@
 # WebCasaBela
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/dairdev/WebCasaBela)
+Webpage for CasaBela &reg; which is a Real Statement company
+
+Website made using PHP and Tailwindcss
