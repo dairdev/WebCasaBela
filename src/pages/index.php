@@ -36,7 +36,7 @@
       <section class="py-16 bg-blue-100 bg-blend-lighten">
         <div class="container relative flex flex-col-reverse mx-auto py-16 lg:py-0 lg:flex-col">
           <div class="w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:py-20 lg:max-w-screen-xl">
-            <div class="mb-0 lg:max-w-lg lg:pr-8 xl:pr-6">
+            <div class="mb-0 lg:max-w-lg lg:pr-8 xl:pr-6" data-aos="zoom-in-right">
               <h2 class="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none md:text-center">
                 Tenemos lo que estas buscando<br class="hidden md:block" />
               </h2>
@@ -95,7 +95,7 @@
               </div>
             </div>
           </div>
-          <div class="inset-y-0 top-0 right-0 w-full max-w-xl px-4 mx-auto mb-6 md:px-0 lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0">
+          <div class="inset-y-0 top-0 right-0 w-full max-w-xl px-4 mx-auto mb-6 md:px-0 lg:pl-8 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-1/2 lg:max-w-full lg:absolute xl:px-0" data-aos="zoom-in-right">
             <img
               class="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
               src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
