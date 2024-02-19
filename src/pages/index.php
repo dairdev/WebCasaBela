@@ -93,5 +93,4 @@
     <?php include_once "./src/pages/components/footer.php" ?>
     <?php include_once "./src/pages/components/scripts.php" ?>
   </body>
-
 </html>
