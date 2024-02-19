@@ -1,14 +1,14 @@
 <section class="py-10 sm:py-16 lg:py-24">
     <div class="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:items-stretch md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-10">
-            <div class="flex flex-col justify-between lg:py-5">
+            <div class="flex flex-col justify-between lg:py-5" data-aos="flip-right">
                 <div>
                     <h2 class="text-3xl font-bold leading-tight text-gray-700 sm:text-4xl lg:leading-tight lg:text-5xl">Ya sea que estés buscando vender tu propiedad o alquilarla</h2>
                     <p class="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-700">¿Buscas la casa de tus sueños o el apartamento perfecto para alquilar? En Casa Bela, tenemos una amplia variedad de propiedades disponibles para adaptarse a todos los estilos de vida y presupuestos.</p>
                 </div>
             </div>
 
-            <div class="lg:pl-12">
+            <div class="lg:pl-12" data-aos="flip-left">
                 <div class="overflow-hidden bg-white rounded-md">
                     <div class="p-6 sm:p-10">
                         <h3 class="text-3xl font-semibold text-black">Pregúnantos</h3>
