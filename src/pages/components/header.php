@@ -5,7 +5,7 @@
       <?php include_once 'components/navbar.php'  ?>
       <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16 lg:pb-48">
         <div class="flex flex-col items-center justify-between xl:flex-row">
-          <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
+          <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12" data-aos="fade-right" data-aos-delay="300">
             <h2
               class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
               La casa de tus sueños<br class="hidden md:block" />
@@ -15,7 +15,7 @@
             </h2>
             <p class="max-w-xl mb-4 text-base text-gray-400 md:text-lg">Nuestra amplia experiencia es nuestra mejor carta de presentacion</p>
           </div>
-          <div class="w-full max-w-xl xl:px-8 xl:w-5/12">
+          <div class="w-full max-w-xl xl:px-8 xl:w-5/12" data-aos="fade-left" data-aos-delay="300">
             <div class="bg-white rounded shadow-2xl p-7 sm:p-10">
               <h3 class="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                 Concerta una cita
