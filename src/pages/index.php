@@ -18,6 +18,7 @@
       https://kitwind.io/products/kometa/components/navs
     -->
   <link rel="stylesheet" href="assets/css/style.css" />
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
   <body>
@@ -108,6 +109,7 @@
       </section>
     </main>
     <?php include_once "components/footer.php" ?>
+    <?php include_once "components/scripts.php" ?>
   </body>
 
 </html>
