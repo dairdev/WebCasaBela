@@ -1,6 +1,6 @@
 <header class="relative h-auto">
   <div class="relative">
-    <img src="assets/images/headerbackground1.jpg" class="absolute inset-0 object-cover w-full h-full" alt="" />
+    <img src="assets/images/headerbackground1.jpg" class="absolute inset-0 object-cover w-full h-full" data-aos="zoom-in" alt="" />
     <div class="relative bg-gray-900 bg-opacity-75">
       <?php include_once 'components/navbar.php'  ?>
       <div class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-16 lg:pb-48">
