@@ -17,8 +17,8 @@
       Remove all code in `styles.css`!
       https://kitwind.io/products/kometa/components/navs
     -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
   <body>
