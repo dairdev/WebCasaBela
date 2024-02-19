@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <?php include_once "./src/pages/components/head.php" ?>
+    <?php require_once "./src/pages/components/head.php" ?>
   </head>
   <body>
-    <?php include "./src/pages/components/header.php" ?>
+    <?php require_once "./src/pages/components/header.php" ?>
     <main class="bg-sky-50">
       <section class="proyectos max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16" data-aos="fade-down">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
