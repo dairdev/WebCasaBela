@@ -1,7 +1,7 @@
 <footer>
   <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
     <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="sm:col-span-2">
+      <div class="sm:col-span-2" data-aos="fade-down">
         <a href="/" aria-label="Go home" title="Company" class="inline-flex items-center">
           <img src="assets/svg/logo.svg" class="w-16" title="Logo CasaBela" />
           <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Casa Bela</span>
@@ -14,7 +14,7 @@
             Descubre por qué somos la elección número uno para compradores, vendedores e inversores por igual. ¡Bienvenido a un mundo de posibilidades ilimitadas con Casa Bela!</p>
         </div>
       </div>
-      <div class="space-y-2 text-sm">
+      <div class="space-y-2 text-sm" data-aos="fade-down">
         <p class="text-base font-bold tracking-wide text-gray-900">Contacto</p>
         <div class="flex">
           <p class="mr-1 text-gray-800">Teléfono:</p>
@@ -31,7 +31,7 @@
           </a>
         </div>
       </div>
-      <div>
+      <div data-aos="fade-down">
         <span class="text-base font-bold tracking-wide text-gray-900">Social</span>
         <div class="flex items-center mt-1 space-x-3">
           <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400">
