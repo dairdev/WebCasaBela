@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <?php include_once "components/head.php" ?>
   </head>
-
   <body>
     <?php include "components/header.php" ?>
     <main class="bg-sky-50">
