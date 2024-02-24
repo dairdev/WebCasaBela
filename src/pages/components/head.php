@@ -8,11 +8,6 @@
 <link rel="mask-icon" href="assets/icons/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
-<!--
-Need a visual blank slate?
-Remove all code in `styles.css`!
-https://kitwind.io/products/kometa/components/navs
--->
 <link rel="stylesheet" href="assets/css/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
