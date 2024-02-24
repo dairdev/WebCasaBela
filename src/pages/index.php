@@ -4,7 +4,6 @@
     <?php  include_once __DIR__."/components/head.php" ?>
   </head>
   <body>
-    <?php include_once __DIR__.'/components/navbar.php'  ?>
     <?php include_once __DIR__."/components/header.php" ?>
     <main class="bg-sky-50">
       <section class="proyectos max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16" data-aos="fade-down">
@@ -91,7 +90,7 @@
         <?php include_once __DIR__."/components/contact.php" ?>
       </section>
     </main>
-    <?php include_once __DIR__."/components/footer.php" ?>
+    <?php include __DIR__."/components/footer.php" ?>
     <?php include_once __DIR__."/components/scripts.php" ?>
   </body>
 </html>

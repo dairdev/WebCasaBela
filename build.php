@@ -111,6 +111,7 @@ function buildFile($filePath)
 
         // End buffering and return its contents
         $output = ob_get_clean();
+
     }
     return $output;
 }
@@ -148,7 +149,7 @@ function build()
         $outfile = str_replace($inPath, $outPath, str_replace(".php",".html", $file));
         print "BUILDING $file to $outfile\n";
         $out = buildFile($file, false);
-        file_put_contents($outfile, $out);
+        file_put_contents($outfile, str_replace("src/pages/","public/",str_replace("php","html",$out)));
     }
 }
 
