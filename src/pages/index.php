@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
-    <?php "components/head.php" ?>
+    <?php  include_once __DIR__."/components/head.php" ?>
   </head>
   <body>
-    <?php "components/header.php" ?>
+    <?php include_once __DIR__.'/components/navbar.php'  ?>
+    <?php include_once __DIR__."/components/header.php" ?>
     <main class="bg-sky-50">
       <section class="proyectos max-w-screen-xl mx-auto p-5 sm:p-10 md:p-16" data-aos="fade-down">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
