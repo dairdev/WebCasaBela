@@ -12,12 +12,12 @@
           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Contacto</a>
         </li>
       </menu>
-      <a href="/" aria-label="Company" title="Company" class="inline-flex items-center lg:mx-auto">
+      <a href="/" aria-label="Logo" title="Logo" class="inline-flex items-center lg:mx-auto">
         <img src="assets/svg/logo.svg" class="w-16" title="Logo CasaBela" />
       </a>
       <menu class="flex items-center hidden ml-auto space-x-8 lg:flex">
         <li>
-          <a href="/"
+          <a href="/src/pages/contacto.php"
             class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-red-400 hover:bg-red-700 focus:shadow-outline focus:outline-none"
             aria-label="Sign up" title="Sign up">
             Reservar Cita
@@ -25,6 +25,7 @@
         </li>
       </menu>
       <!-- Mobile menu -->
+      <div class="lg:hidden flex justify-end">
       <label class="relative z-40 cursor-pointer px-3 py-6" for="mobile-menu">
         <input class="peer hidden" type="checkbox" id="mobile-menu" />
         <div
@@ -40,13 +41,21 @@
           class="fixed top-0 right-0 z-40 h-full w-full translate-x-full overflow-y-auto overscroll-y-none transition duration-500 peer-checked:translate-x-0"
         >
           <div class="float-right min-h-full w-[85%] bg-white px-6 pt-12 shadow-2xl">
-            <menu>
-              <li><a href="/">Home</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </menu>
+              <menu>
+                <li class="py-3"><a href="/src/pages/index.php" aria-label="Inicio" title="Inicio"
+                  class="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-blue-400">Inicio</a>
+                </li>
+                <li class="py-3"><a href="/src/pages/propiedades.php" aria-label="Lista de propiedades" title="Proyectos"
+                  class="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-blue-400">Proyectos</a>
+                </li>
+                <li class="py-3"><a href="/src/pages/contacto.php" aria-label="Contacto" title="Contacto"
+                  class="font-medium tracking-wide text-gray-800 transition-colors duration-200 hover:text-blue-400">Contacto</a>
+                </li>
+              </menu>
           </div>
         </div>
       </label>
+      </div>
     </div>
   </div>
 </div>
