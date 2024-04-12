@@ -12,7 +12,7 @@
           class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-400">Contacto</a>
         </li>
       </menu>
-      <a href="/" aria-label="Logo" title="Logo" class="inline-flex items-center lg:mx-auto">
+      <a href="/src/pages/index.php" aria-label="Logo" title="Logo" class="inline-flex items-center lg:mx-auto">
         <img src="assets/svg/logo.svg" class="w-16" title="Logo CasaBela" />
       </a>
       <menu class="flex items-center hidden ml-auto space-x-8 lg:flex">
