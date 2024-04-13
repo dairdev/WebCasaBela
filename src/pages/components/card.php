@@ -90,10 +90,8 @@
     </div>
   </div>
   <div class="px-6 py-3 flex flex-row items-center justify-between bg-gray-100">
-    <a href="propiedad.php">
-      <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
-        <span class="ml-1">Ver propiedad</span>
-      </span>
+    <a href="propiedad.php" class="block px-8 py-2 text-xs text-white bg-blue-600">
+        <span class="ml-1">Ver propiedad &#x2192;</span>
     </a>
   </div>
 </div>
