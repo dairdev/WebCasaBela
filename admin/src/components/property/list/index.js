@@ -1,18 +1,20 @@
 import { useState, useEffect } from "preact/hooks";
 import {
+ Box,
   TextField,
   Button,
+  Container,
   Card,
 CardContent,
-  Container,
+  Grid,
   Typography,
-  Box,
   MenuItem,
-  Select,
-  FormControl,
-  InputLabel,
+ Drawer, IconButton, Select, CardMedia, Divider, useMediaQuery 
 } from "@mui/material";
-import Grid from "@mui/material/Grid2";
+import Grid2 from "@mui/material/Grid2";
+import { FilterList, BedroomParent, Bathtub, DirectionsCar, SquareFoot, Menu as MenuIcon } from '@mui/icons-material';
+import { styled } from '@mui/material/styles';
+
 import {
   fetchDepartments,
   fetchProvinces,
@@ -21,8 +23,47 @@ import {
   fetchProperties,
 } from "./../../../apilocal";
 
-const PropertiesList = ({ onEdit }) => {
-  const [properties, setProperties] = useState([]);
+// Estilos para la columna izquierda (filtros)
+const SidebarContainer = styled(Box)(({ theme }) => ({
+    width: '25%',
+    [theme.breakpoints.down('md')]: {
+        display: 'none',
+    },
+}));
+
+// Layout responsive para el drawer en pantallas móviles
+const MobileSidebarContainer = styled(Drawer)(({ theme }) => ({
+    display: 'none',
+    [theme.breakpoints.down('md')]: {
+        display: 'block',
+    },
+}));
+
+// Contenedor de la grilla de propiedades
+const GridContainer = styled(Grid)(({ theme }) => ({
+    flexGrow: 1,
+    [theme.breakpoints.down('md')]: {
+        paddingLeft: theme.spacing(0),
+    },
+}));
+
+const PropertiesList = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down('md'));
+
+  const [properties, setProperties] = useState([{
+            id: 1,
+            title: "Casa de 2 pisos en venta",
+            address: "Av. Principal 123, Distrito X",
+            type: "Casa",
+            build_area: "120m²",
+            rooms: 3,
+            bathrooms: 2,
+            garages: 1
+        }]);
+
+  const [searchTerm, setSearchTerm] = useState('');
+    const [sortOrder, setSortOrder] = useState('');
   const [filters, setFilters] = useState({
     propertytype_id: '',
     department_id: '',
@@ -49,6 +90,30 @@ const PropertiesList = ({ onEdit }) => {
       .then(setTypes)
       .catch((error) => console.error(error));
   }, []);
+
+    const toggleDrawer = () => {
+        setDrawerOpen(!drawerOpen);
+    };
+
+  const handleSearchChange = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
+    const handleSortChange = (event) => {
+        setSortOrder(event.target.value);
+    };
+
+  const filteredProperties = properties
+        .filter((property) =>
+            property.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            property.address.toLowerCase().includes(searchTerm.toLowerCase())
+        )
+        .sort((a, b) => {
+            if (sortOrder === 'priceAsc') return a.shown_price - b.shown_price;
+            if (sortOrder === 'priceDesc') return b.shown_price - a.shown_price;
+            if (sortOrder === 'areaDesc') return b.build_area - a.build_area;
+            return 0;
+        });
 
   const handleDepartmentChange = (e) => {
     const department_id = e.target.value;
@@ -113,114 +178,139 @@ const PropertiesList = ({ onEdit }) => {
       <Typography variant="h5" gutterBottom>
         Propiedades
       </Typography>
-      <Grid container spacing={2}>
-        <Grid size={{ xs: 12, md: 3 }}>
-          <FormControl fullWidth variant="outlined" size="small">
-            <InputLabel>Tipo</InputLabel>
-            <Select
-              name="propertytype_id"
-              value={filters.propertytype_id}
-              label="Tipo"
-              onChange={handleTypeChange}
-              size="small"
-            >
-              {types.map((type) => (
-                <MenuItem key={type.id} value={type.id}>
-                  {type.description}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-        {/* Ubicación section */}
-        <Grid size={{ xs: 12, md: 3 }}>
-          <FormControl fullWidth variant="outlined" size="small">
-            <InputLabel>Departmento</InputLabel>
-            <Select
-              name="department_id"
-              value={filters.department_id}
-              onChange={handleDepartmentChange}
-              label="Departmento"
-              size="small"
-            >
-              {departments.map((department) => (
-                <MenuItem key={department.id} value={department.id}>
-                  {department.name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid size={{ xs: 12, sm: 3 }}>
-          <FormControl
-            fullWidth
-            variant="outlined"
-            disabled={!filters.department_id}
-            size="small"
-          >
-            <InputLabel>Provincia</InputLabel>
-            <Select
-              name="province_id"
-              value={filters.province_id}
-              onChange={handleProvinceChange}
-              label="Provincia"
-              size="small"
-            >
-              {provinces.map((province) => (
-                <MenuItem key={province.id} value={province.id}>
-                  {province.name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid size={{ xs: 12, sm: 3 }}>
-          <FormControl
-            fullWidth
-            variant="outlined"
-            disabled={!filters.province_id}
-            size="small"
-          >
-            <InputLabel>Distrito</InputLabel>
-            <Select
-              name="district_id"
-              value={filters.district_id}
-              onChange={handleDistrictChange}
-              label="Distrito"
-              size="small"
-            >
-              {districts.map((district) => (
-                <MenuItem key={district.id} value={district.id}>
-                  {district.name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Grid>
-      </Grid>
-      <Grid container spacing={2}>
-        { ( !properties || properties.length === 0 ) ? 
-          <Box>No hay propiedades registradas</Box>
-          : properties.map( (property) => 
-            (
-              <Grid key={property.id} size={{xs: 12, sm: 4}}>
-            <Card>
-                  <CardContent>
-                    <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-                      { property.description }
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                      { property.address }
-                    </Typography>
-                  </CardContent>
-            </Card>
-              </Grid>
-            )
-          ) 
-        }
-      </Grid>
+      <Box display="flex" minHeight="100vh">
+        {/* Columna de Filtros */}
+        <SidebarContainer>
+          <Filters
+            departments={departments}
+            provinces={provinces}
+            districts={districts}
+            selectedDepartment={filters.department_id}
+            setSelectedDepartment={handleDepartmentChange}
+            selectedProvince={filters.province_id}
+            setSelectedProvince={handleProvinceChange}
+            selectedDistrict={filters.district_id}
+            setSelectedDistrict={handleDistrictChange}
+          />
+        </SidebarContainer>
+
+        {/* Drawer para la versión móvil */}
+        <MobileSidebarContainer anchor="left" open={drawerOpen} onClose={toggleDrawer}>
+          <Filters
+            departments={departments}
+            provinces={provinces}
+            districts={districts}
+            selectedDepartment={filters.department_id}
+            setSelectedDepartment={handleDepartmentChange}
+            selectedProvince={filters.province_id}
+            setSelectedProvince={handleProvinceChange}
+            selectedDistrict={filters.district_id}
+            setSelectedDistrict={handleDistrictChange}
+          />
+        </MobileSidebarContainer>
+
+        {/* Botón para abrir el menú de filtros en móvil */}
+        {isMobile && (
+          <IconButton onClick={toggleDrawer} sx={{ position: 'absolute', top: 16, left: 16 }}>
+            <MenuIcon />
+          </IconButton>
+        )}
+
+        <Box flex={1} p={2}>
+                <Box display="flex" alignItems="center" mb={2} gap={2}>
+                    <Select value={sortOrder} onChange={handleSortChange} displayEmpty>
+                        <MenuItem value="">Ordenar por</MenuItem>
+                        <MenuItem value="priceAsc">Precio: Bajo a Alto</MenuItem>
+                        <MenuItem value="priceDesc">Precio: Alto a Bajo</MenuItem>
+                        <MenuItem value="areaDesc">Área: Mayor a Menor</MenuItem>
+                    </Select>
+                    <TextField
+                        placeholder="Buscar propiedades..."
+                        variant="outlined"
+                        fullWidth
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                    />
+                </Box>
+
+                <Grid2 container spacing={2}>
+                    {filteredProperties.map((property) => (
+                        <Grid2 xs={12} md={4} key={property.id}>
+                            <Card>
+                                <CardMedia
+                                    component="img"
+                                    alt="Property Image"
+                                    height="140"
+                                    image="https://via.placeholder.com/150"
+                                />
+                                <CardContent>
+                                    <Typography variant="h6">{property.title}</Typography>
+                                    <Typography variant="body2">{property.address}</Typography>
+                                    <Typography variant="subtitle2" color="textSecondary">{property.type}</Typography>
+                                    <Box display="flex" alignItems="center" mt={1} gap={1}>
+                                        <BedroomParent /> <Typography>{property.rooms}</Typography>
+                                        <Bathtub /> <Typography>{property.bathrooms}</Typography>
+                                        <DirectionsCar /> <Typography>{property.garages}</Typography>
+                                        <SquareFoot /> <Typography>{property.build_area}</Typography>
+                                    </Box>
+                                </CardContent>
+                            </Card>
+                        </Grid2>
+                    ))}
+                </Grid2>
+            </Box>
+      </Box>
     </Container>
   );
 };
+
+function Filters({ departments, provinces, districts, selectedDepartment, setSelectedDepartment, selectedProvince, setSelectedProvince, selectedDistrict, setSelectedDistrict }) {
+    return (
+        <Box p={2} sx={{ width: 250 }}>
+            <Typography variant="h6">Filtros de Búsqueda</Typography>
+            <Divider sx={{ my: 2 }} />
+            <Select
+                fullWidth
+                value={selectedDepartment}
+                onChange={(e) => setSelectedDepartment(e.target.value)}
+                displayEmpty
+            >
+                <MenuItem value="">Selecciona Departamento</MenuItem>
+                {departments.map((dept) => (
+                    <MenuItem key={dept.id} value={dept.id}>{dept.name}</MenuItem>
+                ))}
+            </Select>
+            <Select
+                fullWidth
+                value={selectedProvince}
+                onChange={(e) => setSelectedProvince(e.target.value)}
+                displayEmpty
+                disabled={!selectedDepartment}
+                sx={{ mt: 2 }}
+            >
+                <MenuItem value="">Selecciona Provincia</MenuItem>
+                {provinces.map((prov) => (
+                    <MenuItem key={prov.id} value={prov.id}>{prov.name}</MenuItem>
+                ))}
+            </Select>
+            <Select
+                fullWidth
+                value={selectedDistrict}
+                onChange={(e) => setSelectedDistrict(e.target.value)}
+                displayEmpty
+                disabled={!selectedProvince}
+                sx={{ mt: 2 }}
+            >
+                <MenuItem value="">Selecciona Distrito</MenuItem>
+                {districts.map((dist) => (
+                    <MenuItem key={dist.id} value={dist.id}>{dist.name}</MenuItem>
+                ))}
+            </Select>
+            <Button variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
+                Aplicar Filtros
+            </Button>
+        </Box>
+    );
+}
 
 export default PropertiesList;

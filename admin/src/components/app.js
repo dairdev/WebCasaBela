@@ -14,6 +14,7 @@ const darkTheme = createTheme({
 // Code-splitting is automated for `routes` directory
 import Home from "../routes/home";
 import PropertyRoute from "../routes/property";
+import PropertiesRoute from "../routes/properties";
 
 const App = () => (
   <ThemeProvider theme={darkTheme}>
@@ -23,6 +24,7 @@ const App = () => (
       <main>
         <Router>
           <Home path="/" />
+          <PropertiesRoute path="/properties" />
           <PropertyRoute path="/property" />
         </Router>
       </main>

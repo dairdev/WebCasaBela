@@ -33,6 +33,8 @@
     "@cloudinary/url-gen": "^1.21.0",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@fontsource/roboto": "^5.1.0",
+    "@mui/icons-material": "^6.1.5",
     "@mui/material": "^6.1.1",
     "@supabase/supabase-js": "^2.45.4",
     "preact": "^10.11.3",
@@ -48,6 +50,6 @@
     ]
   },
   "moduleNameMapper": {
-        "^react/jsx-runtime$": "preact/jsx-runtime"
-    }
+    "^react/jsx-runtime$": "preact/jsx-runtime"
+  }
 }

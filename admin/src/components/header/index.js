@@ -12,8 +12,8 @@ const Header = () => (
 			<Link activeClassName={style.active} href="/">
 				Inicio
 			</Link>
-			<Link activeClassName={style.active} href="/property">
-				Propiedad
+			<Link activeClassName={style.active} href="/properties">
+				Propiedades
 			</Link>
 		</nav>
 	</header>
