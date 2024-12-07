@@ -8,9 +8,7 @@ const PropertyRoute = () => {
 
   return (
     <Container maxWidth="xl">
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <PropertyForm onSubmit={handlePropertySubmit} propertyToEdit={propertyToEdit} />
-      </Box>
+      <PropertyForm />
     </Container>
   );
 };

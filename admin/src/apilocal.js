@@ -15,9 +15,7 @@ export const fetchDepartments = async () => {
 
 export const fetchProvinces = async (departmentId) => {
   try {
-    const response = await axios.get(`${API_URL}/provinces`, {
-      params: { department_id: departmentId },
-    });
+    const response = await axios.get(`${API_URL}/departments/${departmentId}/provinces`);
     return response.data;
     } catch (error) {
     console.error('Error fetching districts:', error);
@@ -27,9 +25,7 @@ export const fetchProvinces = async (departmentId) => {
 
 export const fetchDistricts = async (provinceId) => {
   try {
-    const response = await axios.get(`${API_URL}provinces/${provinceId}/districts`, {
-      params: { province_id: provinceId },
-    });
+    const response = await axios.get(`${API_URL}/provinces/${provinceId}/districts`);
     return response.data;
     } catch (error) {
     console.error('Error fetching districts:', error);
@@ -49,6 +45,7 @@ export const fetchPropertyTypes = async () => {
 
 export const createProperty = async (propertyData) => {
   try {
+    //console.log(propertyData);
     const response = await axios.post(`${API_URL}/properties`, propertyData);
     return response.data;
   } catch (error) {

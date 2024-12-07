@@ -1,6 +1,6 @@
 {
-  "name": "admin",
-  "short_name": "admin",
+  "name": "Casabela Admin",
+  "short_name": "casabelaadmin",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

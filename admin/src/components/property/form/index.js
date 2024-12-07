@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'preact/hooks';
 import { TextField, Button, Card, CardContent, CardMedia, Container, CircularProgress, Typography, Box, MenuItem, Select, FormControl, InputLabel } from '@mui/material';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import { fetchDepartments, fetchProvinces, fetchDistricts, fetchPropertyTypes, createProperty, uploadFile } from './../../../apilocal'; // Importamos las funciones de api.js
 
 const PropertyForm = () => {
@@ -47,7 +47,7 @@ const PropertyForm = () => {
       .then(setTypes)
       .catch(error => console.error(error));
 
-    fetchImages();
+    //fetchImages();
 
   }, []);
 
@@ -105,6 +105,7 @@ const PropertyForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData);
     createProperty(formData)
       .then(response => {
         console.log('Property created successfully:', response);
@@ -163,15 +164,15 @@ const PropertyForm = () => {
   };
 
   return (
-    <Container maxWidth="sm" spacing={2}>
+    <Container maxWidth="lg" spacing={2}>
       <Typography variant="h5" gutterBottom>
         Propiedad
       </Typography>
-      <Grid container >
-        <Grid item xs={12} md={6}>
+      <Grid container id='gridMain' spacing={2} >
+        <Grid size={{xs:12, md:6}} id='gridForm'>
           <form onSubmit={handleSubmit}>
             <Grid container spacing={2}>
-              <Grid item xs={12} md={6}>
+              <Grid size={{xs:12, md:6}}>
                 <FormControl fullWidth variant="outlined"
                   size="small"
                 >
@@ -191,7 +192,7 @@ const PropertyForm = () => {
                   </Select>
                 </FormControl>          </Grid>
               {/* Other fields */}
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   fullWidth
                   label="Descripción"
@@ -203,7 +204,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid size={12}>
                 <TextField
                   fullWidth
                   label="Dirección"
@@ -215,7 +216,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Numero"
@@ -227,7 +228,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Piso"
@@ -238,7 +239,7 @@ const PropertyForm = () => {
                   size="small"
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Año Construcción"
@@ -251,7 +252,7 @@ const PropertyForm = () => {
                 />
               </Grid>
               {/* Ubicación section */}
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <FormControl fullWidth variant="outlined"
                   size="small"
                 >
@@ -263,6 +264,7 @@ const PropertyForm = () => {
                     label="Departmento"
                     size="small"
                   >
+                    <MenuItem value="">Departamento</MenuItem>
                     {departments.map(department => (
                       <MenuItem key={department.id} value={department.id}>
                         {department.name}
@@ -271,7 +273,7 @@ const PropertyForm = () => {
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <FormControl fullWidth variant="outlined" disabled={!formData.department_id}
                   size="small"
                 >
@@ -291,7 +293,7 @@ const PropertyForm = () => {
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <FormControl fullWidth variant="outlined" disabled={!formData.province_id}
                   size="small"
                 >
@@ -314,7 +316,7 @@ const PropertyForm = () => {
               </Grid>
 
               {/* Other fields */}
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Precio Base"
@@ -327,7 +329,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Precio Publicado"
@@ -340,7 +342,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Precio Final"
@@ -353,7 +355,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Area Cubierta (m²)"
@@ -366,7 +368,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Area Construida (m²)"
@@ -379,7 +381,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Area Total (m²)"
@@ -392,7 +394,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Habitaciones"
@@ -405,7 +407,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Baños"
@@ -418,7 +420,7 @@ const PropertyForm = () => {
                   required
                 />
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{xs: 12, md: 4}}>
                 <TextField
                   fullWidth
                   label="Cocheras"
@@ -433,17 +435,21 @@ const PropertyForm = () => {
               </Grid>
             </Grid>
             <Box mt={3}>
-              <Button variant="contained" color="primary" type="submit">
+              <Button variant="contained" color="primary" type="submit" 
+                onClick={handleSubmit}>
                 Guardar
               </Button>
             </Box>
           </form>
-          <div>
+        </Grid>
+        <Grid size={{xs:12, md:6}}>
+          <Box>
             <form onSubmit={handleUpload}>
               <input
                 type="file"
                 accept="image/*"
                 onChange={handleImageChange}
+                multiple
                 required
               />
               <Button variant="contained" type="submit" disabled={loading}>
@@ -477,9 +483,7 @@ const PropertyForm = () => {
                 {error}
               </Typography>
             )}
-          </div>
-        </Grid>
-        <Grid item xs={12} md={6}>
+          </Box>
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
             {images.map((image, index) => (
               <Card key={index} sx={{ width: 200 }}>
