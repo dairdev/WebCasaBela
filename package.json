@@ -1,25 +1,19 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.4.1"
-  },
   "name": "webcasabela",
-  "description": "Web Casabela",
-  "version": "1.0.0",
-  "main": "script.js",
-  "dependencies": {
-  },
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "css": "npx tailwindcss -i ./public/assets/css/src/input.css -o ./public/assets/css/style.css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dairdev/WebCasaBela.git"
+  "dependencies": {
+    "preact": "^10.25.0"
   },
-  "author": "Dennis Infantas",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/dairdev/WebCasaBela/issues"
-  },
-  "homepage": "https://github.com/dairdev/WebCasaBela#readme"
+  "devDependencies": {
+    "@preact/preset-vite": "^2.9.1",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.1"
+  }
 }
