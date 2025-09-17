@@ -1,0 +1,67 @@
+He creado un script bash completo para probar todos los endpoints de la API. El script incluye las siguientes características:
+Características principales:
+🔐 Gestión automática de JWT:
+
+El comando login obtiene y guarda el token en la variable JWT_TOKEN
+Todos los demás comandos usan automáticamente este token
+Verificación automática de que el token existe antes de hacer requests
+
+🎨 Interface colorizada:
+
+Colores para diferentes tipos de mensajes
+Respuestas JSON formateadas (si tienes jq instalado)
+Indicadores visuales de éxito/error
+
+🧪 Comandos disponibles:
+Autenticación:
+bash./test_api.sh login          # Hacer login y obtener JWT
+./test_api.sh me             # Info del usuario actual
+Usuarios:
+bash./test_api.sh users                # Listar usuarios
+./test_api.sh user 1               # Obtener usuario específico
+./test_api.sh create-user          # Crear usuario
+./test_api.sh bulk-users           # Crear usuarios en lote
+./test_api.sh update-user 1        # Actualizar usuario
+./test_api.sh delete-user 1        # Eliminar usuario
+Propiedades:
+bash./test_api.sh properties           # Listar propiedades
+./test_api.sh properties-filtered  # Listar con filtros
+./test_api.sh property 1           # Obtener propiedad específica
+./test_api.sh create-property      # Crear propiedad
+./test_api.sh update-property 1    # Actualizar propiedad
+./test_api.sh delete-property 1    # Eliminar propiedad
+./test_api.sh property-stats       # Estadísticas
+Utilidades:
+bash./test_api.sh status              # Estado de la API
+./test_api.sh test-all            # Ejecutar todas las pruebas
+./test_api.sh help                # Mostrar ayuda
+🚀 Uso rápido:
+1. Hacer ejecutable:
+bashchmod +x test_api.sh
+2. Configurar credenciales:
+Edita las variables al inicio del script:
+bash API_BASE_URL="http://localhost"
+LOGIN_EMAIL="admin@example.com"
+LOGIN_PASSWORD="password"
+3. Ejecutar pruebas:
+bash# Ejecutar todas las pruebas
+./test_api.sh test-all
+
+# O paso a paso
+./test_api.sh login
+./test_api.sh users
+./test_api.sh create-property
+🔧 Características técnicas:
+
+Gestión de errores: Verifica códigos de estado HTTP
+Extracción de tokens: Funciona con y sin jq
+Datos dinámicos: Usa timestamps para evitar duplicados
+Respuestas formateadas: JSON pretty-print cuando es posible
+Validaciones: Verifica parámetros requeridos
+
+📋 Dependencias:
+
+curl (requerido)
+jq (opcional, para formateo JSON)
+
+El script está listo para usar y te permitirá probar fácilmente todos los endpoints de la API manteniendo el JWT token en la variable de entorno durante toda la sesión.
