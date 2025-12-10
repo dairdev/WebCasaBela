@@ -2,6 +2,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Property extends Model
 {
@@ -64,22 +65,22 @@ class Property extends Model
         'year_build' => 'integer'
     ];
     
-    public function propertyType()
+    public function propertyType(): BelongsTo
     {
         return $this->belongsTo(PropertyType::class, 'propertytype_id');
     }
     
-    public function district()
+    public function district(): BelongsTo
     {
         return $this->belongsTo(District::class);
     }
     
-    public function creator()
+    public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
     }
     
-    public function updater()
+    public function updater(): BelongsTo
     {
         return $this->belongsTo(User::class, 'updated_by');
     }

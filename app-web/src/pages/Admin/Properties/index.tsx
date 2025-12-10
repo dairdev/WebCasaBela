@@ -25,6 +25,7 @@ interface Property {
 	title: string;
 	address: string;
 	price: number;
+	area: number;
 	type: string;
 	status: string;
 }
@@ -37,6 +38,7 @@ export default function Properties() {
 		title: "",
 		address: "",
 		price: 0,
+		area: 0,
 		type: "",
 		status: "",
 	});
@@ -49,6 +51,7 @@ export default function Properties() {
 				title: "Modern Apartment",
 				address: "123 Main St",
 				price: 250000,
+				area: 90,
 				type: "Apartment",
 				status: "Available",
 			},
@@ -57,6 +60,7 @@ export default function Properties() {
 				title: "Family House",
 				address: "456 Oak Ave",
 				price: 350000,
+				area: 90,
 				type: "House",
 				status: "Sold",
 			},
@@ -65,7 +69,14 @@ export default function Properties() {
 
 	const handleAdd = () => {
 		setEditingProperty(null);
-		setFormData({ title: "", address: "", price: 0, type: "", status: "" });
+		setFormData({
+			title: "",
+			address: "",
+			price: 0,
+			type: "",
+			area: 0,
+			status: "",
+		});
 		setOpen(true);
 	};
 

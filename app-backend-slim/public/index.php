@@ -1,20 +1,16 @@
 <?php
+
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-
 use Slim\Factory\AppFactory;
 use DI\Container;
 use Slim\Views\Twig;
 use Slim\Views\TwigMiddleware;
-
 use App\Controllers\CmsController;
-
 use App\Controllers\Admin\PropertyController as AdminPropertyController;
 use App\Controllers\Admin\AuthController;
 use App\Controllers\Admin\UserController;
-
 use App\Controllers\Web\PropertyController as WebPropertyController;
-
 use App\Middleware\JwtMiddleware;
 
 require __DIR__ . "/../vendor/autoload.php";
@@ -30,7 +26,7 @@ require __DIR__ . "/../config/database.php";
 $container = new Container();
 
 // Set view in Container
-$container->set(Twig::class, function() {
+$container->set(Twig::class, function () {
     //return Twig::create(__DIR__ . '/../templates', ['cache' => __DIR__ . '/../cache']);
     return Twig::create(__DIR__ . '/../templates');
 });
@@ -123,7 +119,6 @@ $app->group("/api", function ($group) use ($authController, $userController, $ad
     $group->put('/properties/{id}', [$propertyController, 'update']);
     $group->delete('/properties/{id}', [$propertyController, 'delete']);
     //$group->get('/properties/stats', [$propertyController, 'stats']); // Estadísticas
-
 })->add($jwtMiddleware);
 
 // Ruta de prueba
@@ -136,14 +131,14 @@ $app->get('/', function (Request $request, Response $response) {
             // Autenticación
             'POST /api/auth/login' => 'Iniciar sesión',
             'GET /api/auth/me' => 'Información del usuario actual',
-            
+
             // Usuarios
             'GET /api/users' => 'Listar usuarios',
             'GET /api/users/{id}' => 'Obtener usuario',
             'POST /api/users' => 'Crear usuario',
             'PUT /api/users/{id}' => 'Actualizar usuario',
             'DELETE /api/users/{id}' => 'Eliminar usuario',
-            
+
             // Propiedades
             'GET /api/properties' => 'Listar propiedades (con filtros)',
             'GET /api/properties/{id}' => 'Obtener propiedad',

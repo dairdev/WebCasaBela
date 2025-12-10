@@ -66,8 +66,13 @@ export function App() {
 				<Route
 					default
 					component={() =>
-						isAuthenticated ? <Properties /> : <Login onLogin={handleLogin} />
-					}
+						isAuthenticated ? (
+							<AdminLayout onLogout={handleLogout}>
+								{renderAdminPage("properties")}
+							</AdminLayout>
+						) : (
+							<Login onLogin={handleLogin} />
+						)}
 				/>
 				<Route path="/404" component={NotFound} />
 			</Router>

@@ -1,5 +1,8 @@
 import { useState } from "preact/hooks";
 import {
+  Alert,
+  IconButton,
+  InputAdornment,
   Paper,
   TextField,
   Button,
@@ -8,29 +11,52 @@ import {
   Container,
 } from "@mui/material";
 
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { authService, type AuthError } from "../../services/authService";
+
+import {
+  authenticate,
+  LoginResponse,
+  LoginCredentials,
+} from "../../services/index";
+
 interface LoginProps {
   onLogin: () => void;
 }
 
 export default function Login({ onLogin }: LoginProps) {
   const [credentials, setCredentials] = useState({
-    username: "",
+    email: "",
     password: "",
   });
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
+    setError(null);
     setLoading(true);
-
-    // Simulate API call
-    setTimeout(() => {
-      if (credentials.username && credentials.password) {
-        localStorage.setItem("authToken", "fake-jwt-token");
+    if (credentials.email && credentials.password) {
+      try {
+        await authService.login(credentials);
         onLogin();
+      } catch (err) {
+        const authError = err as AuthError;
+        setError(authError.message);
+        console.error("Login error:", authError);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
-    }, 1000);
+    }
+  };
+
+  const handleClickShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleMouseDownPassword = (e: Event) => {
+    e.preventDefault();
   };
 
   return (
@@ -45,19 +71,28 @@ export default function Login({ onLogin }: LoginProps) {
       >
         <Paper elevation={3} sx={{ p: 4, width: "100%" }}>
           <Typography component="h1" variant="h4" align="center" gutterBottom>
-            Login
+            Ingreso
           </Typography>
+          {error && (
+            <Alert
+              severity="error"
+              sx={{ mb: 2 }}
+              onClose={() => setError(null)}
+            >
+              {error}
+            </Alert>
+          )}
           <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
-              label="Username"
-              value={credentials.username}
+              label="Email"
+              value={credentials.email}
               onChange={(e) =>
                 setCredentials((prev) => ({
                   ...prev,
-                  username: (e.target as HTMLInputElement).value,
+                  email: (e.target as HTMLInputElement).value,
                 }))
               }
               autoFocus
@@ -67,7 +102,9 @@ export default function Login({ onLogin }: LoginProps) {
               required
               fullWidth
               label="Password"
-              type="password"
+              name="password"
+              type={showPassword ? "text" : "password"}
+              autoComplete="current-password"
               value={credentials.password}
               onChange={(e) =>
                 setCredentials((prev) => ({
@@ -75,6 +112,22 @@ export default function Login({ onLogin }: LoginProps) {
                   password: (e.target as HTMLInputElement).value,
                 }))
               }
+              disabled={loading}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                      disabled={loading}
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
             <Button
               type="submit"

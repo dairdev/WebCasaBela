@@ -4,8 +4,6 @@ namespace App\Controllers\Web;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use App\Models\Property;
-use App\Models\PropertyType;
-use App\Models\District;
 
 class PropertyController
 {
